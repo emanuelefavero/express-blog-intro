@@ -1,0 +1,17 @@
+{
+  "name": "express-blog-intro",
+  "version": "1.0.0",
+  "description": "<img src=\"logo.svg\" alt=\"Node.js logo\" width=\"100\">",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "Emanuele Favero <emafaux89@gmail.com> (https://emanuelefavero.com/)",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
