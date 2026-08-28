@@ -5,13 +5,12 @@ import { posts } from './data/posts.js';
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
-app.use(express.json());
 app.use(express.static('public'));
 
-app.get('/', (_req, res) => res.sendFile(path.resolve('public/index.html')));
+// TIP: Root route handled in public/index.html
 
 app.get('/bacheca', (_req, res) => {
-  res.json(posts);
+  res.json({ posts });
 });
 
 app.use((_req, res) => {
