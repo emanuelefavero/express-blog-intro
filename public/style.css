@@ -5,6 +5,7 @@
 }
 
 body {
+  min-width: 300px;
   font-family: system-ui, sans-serif;
   background-color: #0a0b0b;
   color: #fff;
@@ -21,6 +22,11 @@ h1 {
   font-size: 2rem;
 }
 
+body > h2 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
 a {
   color: oklch(67.3% 0.182 276.935);
   text-decoration: none;
@@ -29,4 +35,46 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.link-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    text-decoration: none;
+
+    code {
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    color: inherit;
+    font-size: 0.875rem;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge-get {
+  background-color: oklch(34% 0.1 155);
+  color: oklch(85% 0.16 155);
 }
