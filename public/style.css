@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #0a0b0b;
+  color: #fff;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+a {
+  color: oklch(67.3% 0.182 276.935);
+  text-decoration: none;
+  text-underline-offset: 3px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
