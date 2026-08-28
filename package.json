@@ -13,5 +13,9 @@
   "type": "module",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "prettier": "^3.9.6"
   }
 }

@@ -3,7 +3,12 @@
   "jsxSingleQuote": true,
 
   "plugins": [
-    "prettier-plugin-organize-imports"
+    "@ianvs/prettier-plugin-sort-imports"
   ],
-  "organizeImportsSkipDestructiveCodeActions": true
+
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+    "^[.]"
+  ]
 }
