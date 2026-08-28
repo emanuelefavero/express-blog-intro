@@ -25,7 +25,7 @@ We also expose static assets so that we can view the images associated with each
 
 - Open your browser and go to `http://localhost:3000` to see the app running.
 
-> To run the project in watch mode, use `npm run watch` instead of `npm start`.
+> To run the project in watch mode, use `npm run dev` instead of `npm start`.
 
 ## Test the routes
 
