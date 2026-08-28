@@ -5,6 +5,9 @@ import { posts } from './data/posts.js';
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
+app.use(express.json());
+app.use(express.static('public'));
+
 app.get('/', (_req, res) => res.send('Server del mio blog'));
 
 app.get('/bacheca', (_req, res) => {
