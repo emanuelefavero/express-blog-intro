@@ -1,11 +1,13 @@
+@baseUrl = http://localhost:3000
+
 ### /
-GET http://localhost:3000/
+GET {{baseUrl}}/
 
 ### /bacheca
-GET http://localhost:3000/bacheca
+GET {{baseUrl}}/bacheca
 
 ### 404
-GET http://localhost:3000/*
+GET {{baseUrl}}/*
 
 ### static files
-GET http://localhost:3000/images/ciambellone.jpeg
+GET {{baseUrl}}/images/ciambellone.jpeg
