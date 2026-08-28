@@ -1,0 +1,11 @@
+### /
+GET http://localhost:3000/
+
+### /bacheca
+GET http://localhost:3000/bacheca
+
+### 404
+GET http://localhost:3000/*
+
+### static files
+GET http://localhost:3000/images/ciambellone.jpeg
