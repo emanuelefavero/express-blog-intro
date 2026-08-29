@@ -23,4 +23,41 @@
     align-items: center;
     gap: 1rem;
   }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    position: relative;
+    color: var(--foreground-muted);
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0.85rem;
+      left: 0;
+      height: 2px;
+      background-color: var(--primary);
+      border-radius: 999px;
+      content: '';
+      opacity: 0;
+      transform: scaleX(0.6);
+      transition:
+        opacity 150ms ease,
+        transform 150ms ease;
+    }
+
+    &:hover,
+    &.active {
+      color: var(--primary);
+    }
+
+    &.active::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import './Header.css';
 import { Button } from '@/components/ui/Button';
-import { useLocation, useNavigate } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { BackButton } from '../shared/BackButton';
 
 export const Header = () => {
@@ -19,13 +19,22 @@ export const Header = () => {
             variant={Button.variant.ghost}
             className='logo font-semibold text-xl'
             onClick={handleLogoClick}
-            aria-label={isHomePath ? 'Reload homepage' : 'Go to homepage'}
+            aria-label={isHomePath ? 'Ricarica la homepage' : 'Vai alla homepage'}
           >
             Express Blog
           </Button>
 
-          <BackButton variant={Button.variant.ghost} />
+          <BackButton variant={Button.variant.ghost} label='Indietro' />
         </div>
+
+        <nav className='main-nav' aria-label='Navigazione principale'>
+          <NavLink className='nav-link' to='/' end>
+            Blog
+          </NavLink>
+          <NavLink className='nav-link' to='/docs'>
+            API
+          </NavLink>
+        </nav>
       </div>
     </header>
   );
