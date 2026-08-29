@@ -13,7 +13,8 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/bacheca': 'http://localhost:3000',
+      '/api': 'http://localhost:3000',
+      '/images': 'http://localhost:3000',
     },
   },
 });
