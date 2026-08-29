@@ -1,0 +1,36 @@
+.post-detail {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  animation: fade-in 350ms ease both;
+
+  .card-content {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.post-detail-image {
+  width: 100%;
+  max-height: 30rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-detail-message {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.post-detail-error {
+  padding: 1rem;
+  color: var(--danger);
+  background-color: var(--background);
+  border: 1px solid var(--danger);
+  border-radius: 0.75rem;
+}

@@ -1,7 +1,17 @@
+import { PostCatalog } from '@/features/posts';
+import './Home.css';
+
 export const Home = () => {
   return (
-    <div className='container'>
-      <h1 className='font-normal text-3xl'>Server del mio blog</h1>
-    </div>
+    <>
+      <header className='home-intro'>
+        <h1 className='font-normal text-3xl'>Server del mio blog</h1>
+        <p>
+          Scopri le ricette disponibili e consulta i dati forniti dalle API.
+        </p>
+      </header>
+
+      <PostCatalog />
+    </>
   );
 };

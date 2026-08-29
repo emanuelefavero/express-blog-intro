@@ -1,0 +1,14 @@
+.post-catalog,
+.post-error {
+  display: grid;
+  gap: 1rem;
+}
+
+.post-error {
+  justify-items: start;
+  padding: 1rem;
+  color: var(--danger);
+  background-color: var(--background);
+  border: 1px solid var(--danger);
+  border-radius: 0.75rem;
+}

@@ -1,0 +1,9 @@
+.home-intro {
+  display: grid;
+  gap: 0.5rem;
+
+  p {
+    max-width: 60ch;
+    color: var(--foreground-muted);
+  }
+}

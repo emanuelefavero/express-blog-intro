@@ -1,4 +1,4 @@
-import { Home, NotFound } from '@/pages';
+import { Docs, Home, NotFound, Post } from '@/pages';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { RootLayout } from './RootLayout';
 
@@ -15,6 +15,8 @@ export const App = () => {
     <Nest providers={providers}>
       <Route path='/' element={<RootLayout />}>
         <Route index element={<Home />} />
+        <Route path='posts/:postId' element={<Post />} />
+        <Route path='docs' element={<Docs />} />
         <Route path='*' element={<NotFound />} />
       </Route>
     </Nest>

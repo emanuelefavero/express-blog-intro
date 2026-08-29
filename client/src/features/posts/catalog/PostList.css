@@ -1,0 +1,9 @@
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+
+  > li {
+    min-width: 0;
+  }
+}
