@@ -1,7 +1,7 @@
 export const Home = () => {
   return (
     <div className='container'>
-      <h1>Server del mio blog</h1>
+      <h1 className='font-normal text-3xl'>Server del mio blog</h1>
     </div>
   );
 };

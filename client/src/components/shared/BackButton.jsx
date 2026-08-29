@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/Button';
 import { cx } from '@/lib/utils';
-import { paths } from '@/router/paths';
 import { Undo2 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router';
 import './BackButton.css';
@@ -14,7 +13,7 @@ export const BackButton = ({
 }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const isHome = pathname === paths.home;
+  const isHome = pathname === '/';
 
   if (isHome) return null;
 

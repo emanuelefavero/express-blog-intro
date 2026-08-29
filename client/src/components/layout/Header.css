@@ -1,0 +1,26 @@
+.header {
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (width >= 580px) {
+      flex-direction: row;
+    }
+  }
+
+  .logo,
+  .nav-link {
+    padding-block: 1.25rem;
+  }
+
+  .logo-and-stuff {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
