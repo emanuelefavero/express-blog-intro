@@ -6,44 +6,64 @@ import { usePost } from '../hooks/usePost';
 import './PostDetail.css';
 
 export const PostDetail = ({ postId }) => {
-  const { post, status, retry } = usePost(postId);
+  const { state, retry } = usePost(postId);
 
-  if (status === 'loading') return <Spinner />;
+  const getContent = () => {
+    switch (state.step) {
+      case 'idle':
+        return null;
 
-  if (status === 'not-found') {
-    return (
-      <div className='post-detail-message' role='alert'>
-        <h1 className='font-normal text-3xl'>Post non trovato</h1>
-        <p>Il post richiesto non esiste.</p>
-      </div>
-    );
-  }
+      case 'loading':
+        return <Spinner />;
 
-  if (status === 'error') {
-    return (
-      <div className='post-detail-message post-detail-error' role='alert'>
-        <p>Non è stato possibile caricare il post.</p>
-        <Button onClick={retry}>Riprova</Button>
-      </div>
-    );
-  }
+      case 'success': {
+        const post = state.data;
 
-  return (
-    <Card as='article' className='post-detail'>
-      <img className='post-detail-image' src={post.image} alt={post.title} />
-      <Card.Header>
-        <Card.Title as='h1' className='text-3xl'>
-          {post.title}
-        </Card.Title>
-      </Card.Header>
-      <Card.Content>
-        <p>{post.content}</p>
-        <div className='post-tags' aria-label='Tag'>
-          {post.tags.map((tag) => (
-            <Badge key={tag}>{tag}</Badge>
-          ))}
-        </div>
-      </Card.Content>
-    </Card>
-  );
+        return (
+          <Card as='article' className='post-detail'>
+            <img
+              className='post-detail-image'
+              src={post.image}
+              alt={post.title}
+            />
+            <Card.Header>
+              <Card.Title as='h1' className='text-3xl'>
+                {post.title}
+              </Card.Title>
+            </Card.Header>
+            <Card.Content>
+              <p>{post.content}</p>
+              <div className='post-tags' aria-label='Tag'>
+                {post.tags.map((tag) => (
+                  <Badge key={tag}>{tag}</Badge>
+                ))}
+              </div>
+            </Card.Content>
+          </Card>
+        );
+      }
+
+      case 'error':
+        if (state.error.response?.status === 404) {
+          return (
+            <div className='post-detail-message' role='alert'>
+              <h1 className='font-normal text-3xl'>Post non trovato</h1>
+              <p>Il post richiesto non esiste.</p>
+            </div>
+          );
+        }
+
+        return (
+          <div className='post-detail-message post-detail-error' role='alert'>
+            <p>Non è stato possibile caricare il post.</p>
+            <Button onClick={retry}>Riprova</Button>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return getContent();
 };

@@ -5,7 +5,35 @@ import { PostList } from './PostList';
 import './PostCatalog.css';
 
 export const PostCatalog = () => {
-  const { posts, status, retry } = usePosts();
+  const { state, retry } = usePosts();
+
+  const getContent = () => {
+    switch (state.step) {
+      case 'idle':
+        return null;
+
+      case 'loading':
+        return <Spinner />;
+
+      case 'success':
+        return state.data.length === 0 ? (
+          <p>Non ci sono ancora post disponibili.</p>
+        ) : (
+          <PostList posts={state.data} />
+        );
+
+      case 'error':
+        return (
+          <div className='post-error' role='alert'>
+            <p>Non è stato possibile caricare i post.</p>
+            <Button onClick={retry}>Riprova</Button>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
 
   return (
     <section className='post-catalog' aria-labelledby='posts-title'>
@@ -13,15 +41,7 @@ export const PostCatalog = () => {
         Post disponibili
       </h2>
 
-      {status === 'loading' && <Spinner />}
-      {status === 'success' && <PostList posts={posts} />}
-      {status === 'empty' && <p>Non ci sono ancora post disponibili.</p>}
-      {status === 'error' && (
-        <div className='post-error' role='alert'>
-          <p>Non è stato possibile caricare i post.</p>
-          <Button onClick={retry}>Riprova</Button>
-        </div>
-      )}
+      {getContent()}
     </section>
   );
 };

@@ -4,11 +4,7 @@ import { Link } from 'react-router';
 import './PostCard.css';
 
 export const PostCard = ({ post }) => (
-  <Card
-    as={Link}
-    className='post-card'
-    to={`/posts/${post.id}`}
-  >
+  <Card as={Link} className='post-card' to={`/posts/${post.id}`}>
     <img
       className='post-card-image'
       src={post.image}
