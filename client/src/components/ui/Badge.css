@@ -15,6 +15,12 @@
     border-color: var(--border);
   }
 
+  &.success {
+    color: var(--foreground);
+    background-color: var(--background-success);
+    border-color: var(--success);
+  }
+
   &.warning {
     color: var(--foreground);
     background-color: var(--background-warning);

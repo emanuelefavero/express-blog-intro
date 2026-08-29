@@ -3,6 +3,7 @@ import './Badge.css';
 
 const badgeVariant = Object.freeze({
   default: 'default',
+  success: 'success',
   warning: 'warning',
   danger: 'danger',
 });
