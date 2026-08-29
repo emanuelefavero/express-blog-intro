@@ -3,11 +3,14 @@
 ### /
 GET {{baseUrl}}/
 
-### /bacheca
-GET {{baseUrl}}/bacheca
+### /api/posts
+GET {{baseUrl}}/api/posts
 
-### 404
-GET {{baseUrl}}/*
+### /api/posts/:id
+GET {{baseUrl}}/api/posts/1
+
+### /api/nonexistent
+GET {{baseUrl}}/api/nonexistent
 
 ### static files
 GET {{baseUrl}}/images/ciambellone.jpeg

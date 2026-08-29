@@ -1,16 +1,8 @@
 # Express Blog Intro
 
-An Express.js intro exercise from my web dev course.
+An Express.js blog starter template from my web dev course.
 
 <img src="logo.svg" alt="Node.js logo" width="100">
-
-## Description
-
-We are creating our personal blog and day by day we will be able to enrich it with new features based on what we learn.
-
-For now we have a simple Express.js app with a `/` route that returns a simple text "Server del mio blog" and a `/bacheca` route that returns a JSON object with a list of posts.
-
-We also expose static assets so that we can view the images associated with each post.
 
 ## Run locally
 

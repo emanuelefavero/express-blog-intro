@@ -27,26 +27,48 @@
       "response": []
     },
     {
-      "name": "bacheca",
+      "name": "api/posts",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/bacheca",
+          "raw": "http://localhost:3000/api/posts",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
-            "bacheca"
+            "api",
+            "posts"
           ]
         }
       },
       "response": []
     },
     {
-      "name": "404",
+      "name": "api/posts/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/posts/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API 404",
       "request": {
         "method": "GET",
         "header": [],

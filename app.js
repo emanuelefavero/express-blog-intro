@@ -1,20 +1,26 @@
 import path from 'node:path';
 import express from 'express';
-import { posts } from './data/posts.js';
+import { router } from './routes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
-app.use(express.static('public'));
+// Middlewares
+app.use(express.json());
 
-// TIP: Root route handled in public/index.html
+// API
+app.use('/api', router);
 
-app.get('/bacheca', (_req, res) => {
-  res.json({ posts });
-});
+// Static files
+app.use('/images', express.static(path.resolve('public/images')));
 
-app.use((_req, res) => {
-  res.status(404).json({ error: 'Risorsa non trovata' });
+// Client
+const clientPath = path.resolve('client/dist');
+app.use(express.static(clientPath));
+
+// Catch-all route for client-side routing
+app.get('/{*splat}', (_req, res) => {
+  res.sendFile(path.join(clientPath, 'index.html'));
 });
 
 app.listen(PORT, () => {
