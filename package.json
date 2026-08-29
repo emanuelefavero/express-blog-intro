@@ -8,7 +8,8 @@
     "dev": "node --watch app.js",
     "dev:client": "npm --prefix client run dev",
     "build:client": "npm --prefix client run build",
-    "lint:client": "npm --prefix client run lint"
+    "lint:client": "npm --prefix client run lint",
+    "preview": "npm run build:client && npm start"
   },
   "keywords": [],
   "author": "Emanuele Favero <emafaux89@gmail.com> (https://emanuelefavero.com/)",
