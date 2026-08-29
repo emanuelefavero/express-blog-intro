@@ -29,4 +29,4 @@ Drag and drop the `postman/express-blog-intro.postman_collection.json` file into
 
 You can also use the [REST Client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for VS Code. After installing it, open the `test.http` file and click on "Send Request" to test the routes.
 
-> Tip: We can also use `curl` to quickly test the routes from the command line (e.g. `curl http://localhost:3000/bacheca`).
+> Tip: We can also use `curl` to quickly test the routes from the command line (e.g. `curl http://localhost:3000/api/posts`).
