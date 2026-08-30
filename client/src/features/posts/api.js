@@ -1,13 +1,9 @@
 import axios from 'axios';
 
-export const getPosts = async () => {
-  const { data } = await axios.get('/api/posts');
-
-  return data.posts;
+export const getPosts = () => {
+  return axios.get('/api/posts').then(({ data }) => data.posts);
 };
 
-export const getPost = async (postId) => {
-  const { data } = await axios.get(`/api/posts/${postId}`);
-
-  return data;
+export const getPost = (postId) => {
+  return axios.get(`/api/posts/${postId}`).then(({ data }) => data);
 };

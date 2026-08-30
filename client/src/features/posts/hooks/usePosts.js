@@ -6,16 +6,12 @@ export const usePosts = () => {
   const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
-    const loadPosts = async () => {
+    const loadPosts = () => {
       setState({ step: 'loading' });
 
-      try {
-        const data = await getPosts();
-
-        setState({ step: 'success', data });
-      } catch (error) {
-        setState({ step: 'error', error });
-      }
+      getPosts()
+        .then((data) => setState({ step: 'success', data }))
+        .catch((error) => setState({ step: 'error', error }));
     };
 
     loadPosts();
