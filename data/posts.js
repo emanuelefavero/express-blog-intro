@@ -1,4 +1,4 @@
-export const posts = [
+const POSTS = Object.freeze([
   {
     id: 1,
     title: 'Ciambellone della domenica',
@@ -34,4 +34,53 @@ export const posts = [
     image: '/images/torta_paesana.jpeg',
     tags: ['dolci', 'torta', 'tradizione'],
   },
-];
+]);
+
+// Get all posts
+export const getAllPosts = (posts = POSTS) => {
+  return posts;
+};
+
+// Get post by ID
+export const getSinglePostById = (id, posts = POSTS) => {
+  return posts.find((post) => post.id === id);
+};
+
+// Filter by tag
+export const getPostsByTag = (tag, posts = POSTS) => {
+  return posts.filter((post) =>
+    post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()),
+  );
+};
+
+// Search by title or content
+export const searchPosts = (query, posts = POSTS) => {
+  const lowerQuery = query.toLowerCase();
+  return posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(lowerQuery) ||
+      post.content.toLowerCase().includes(lowerQuery),
+  );
+};
+
+// Sort by title
+export const sortPostsByTitle = (order = 'asc', posts = POSTS) => {
+  return posts.toSorted((a, b) => {
+    if (order === 'asc') {
+      return a.title.localeCompare(b.title);
+    } else {
+      return b.title.localeCompare(a.title);
+    }
+  });
+};
+
+// Sort by id
+export const sortPostsById = (order = 'asc', posts = POSTS) => {
+  return posts.toSorted((a, b) => {
+    if (order === 'asc') {
+      return a.id - b.id;
+    } else {
+      return b.id - a.id;
+    }
+  });
+};
