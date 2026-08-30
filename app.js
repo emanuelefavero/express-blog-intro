@@ -8,6 +8,12 @@ const PORT = process.env.PORT ?? 3000;
 // Middlewares
 app.use(express.json());
 
+const logger = (req, _res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+};
+app.use(logger);
+
 // API
 app.use('/api', router);
 
