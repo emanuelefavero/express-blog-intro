@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:3000
 
-### React frontend
+### React build served by Express
 GET {{baseUrl}}/
 
 ### /bacheca
