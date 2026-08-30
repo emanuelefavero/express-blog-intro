@@ -8,17 +8,15 @@
   },
   "item": [
     {
-      "name": "homepage",
+      "name": "React frontend",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/",
-          "protocol": "http",
+          "raw": "{{baseUrl}}/",
           "host": [
-            "localhost"
+            "{{baseUrl}}"
           ],
-          "port": "3000",
           "path": [
             ""
           ]
@@ -27,40 +25,34 @@
       "response": []
     },
     {
-      "name": "api/posts",
+      "name": "bacheca",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/api/posts",
-          "protocol": "http",
+          "raw": "{{baseUrl}}/bacheca",
           "host": [
-            "localhost"
+            "{{baseUrl}}"
           ],
-          "port": "3000",
           "path": [
-            "api",
-            "posts"
+            "bacheca"
           ]
         }
       },
       "response": []
     },
     {
-      "name": "api/posts/:id",
+      "name": "bacheca/:id",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/api/posts/1",
-          "protocol": "http",
+          "raw": "{{baseUrl}}/bacheca/1",
           "host": [
-            "localhost"
+            "{{baseUrl}}"
           ],
-          "port": "3000",
           "path": [
-            "api",
-            "posts",
+            "bacheca",
             "1"
           ]
         }
@@ -73,14 +65,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/*",
-          "protocol": "http",
+          "raw": "{{baseUrl}}/bacheca/1/nonexistent",
           "host": [
-            "localhost"
+            "{{baseUrl}}"
           ],
-          "port": "3000",
           "path": [
-            "*"
+            "bacheca",
+            "1",
+            "nonexistent"
           ]
         }
       },
@@ -92,12 +84,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/images/ciambellone.jpeg",
-          "protocol": "http",
+          "raw": "{{baseUrl}}/images/ciambellone.jpeg",
           "host": [
-            "localhost"
+            "{{baseUrl}}"
           ],
-          "port": "3000",
           "path": [
             "images",
             "ciambellone.jpeg"
@@ -110,7 +100,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": ""
+      "value": "http://localhost:3000"
     }
   ]
 }

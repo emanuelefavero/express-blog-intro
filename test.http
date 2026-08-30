@@ -1,16 +1,28 @@
 @baseUrl = http://localhost:3000
 
-### /
+### React frontend
 GET {{baseUrl}}/
 
-### /api/posts
-GET {{baseUrl}}/api/posts
+### /bacheca
+GET {{baseUrl}}/bacheca
 
-### /api/posts/:id
-GET {{baseUrl}}/api/posts/1
+### /bacheca/:id
+GET {{baseUrl}}/bacheca/1
 
-### /api/nonexistent
-GET {{baseUrl}}/api/nonexistent
+### Filter posts by tag
+GET {{baseUrl}}/bacheca?tag=dolci
+
+### Search posts
+GET {{baseUrl}}/bacheca?search=barbabietola
+
+### Sort posts
+GET {{baseUrl}}/bacheca?sortBy=title&order=desc
+
+### Post not found
+GET {{baseUrl}}/bacheca/999
+
+### API resource not found
+GET {{baseUrl}}/bacheca/1/nonexistent
 
 ### static files
 GET {{baseUrl}}/images/ciambellone.jpeg

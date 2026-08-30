@@ -4,13 +4,13 @@ import './Docs.css';
 
 const endpoints = [
   {
-    path: '/api/posts',
-    href: '/api/posts',
+    path: '/bacheca',
+    href: '/bacheca',
     description: 'Restituisce l’elenco completo dei post disponibili.',
   },
   {
-    path: '/api/posts/:id',
-    href: '/api/posts/1',
+    path: '/bacheca/:id',
+    href: '/bacheca/1',
     description: 'Restituisce il post corrispondente all’identificativo indicato.',
   },
 ];
