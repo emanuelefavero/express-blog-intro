@@ -10,6 +10,7 @@ export const PostDetail = ({ postId }) => {
 
   const getContent = () => {
     switch (state.step) {
+      default:
       case 'idle':
         return null;
 
@@ -59,9 +60,6 @@ export const PostDetail = ({ postId }) => {
             <Button onClick={retry}>Riprova</Button>
           </div>
         );
-
-      default:
-        return null;
     }
   };
 

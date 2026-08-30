@@ -1,37 +1,27 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getPost } from '../api';
 
 export const usePost = (postId) => {
   const [state, setState] = useState({ step: 'idle' });
-  const [requestCount, setRequestCount] = useState(0);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
-    const controller = new AbortController();
-
     const loadPost = async () => {
       setState({ step: 'loading' });
 
       try {
-        const data = await getPost(postId, {
-          signal: controller.signal,
-        });
+        const data = await getPost(postId);
 
         setState({ step: 'success', data });
       } catch (error) {
-        if (controller.signal.aborted) return;
-
         setState({ step: 'error', error });
       }
     };
 
     loadPost();
+  }, [postId, retryCount]);
 
-    return () => controller.abort();
-  }, [postId, requestCount]);
-
-  const retry = useCallback(() => {
-    setRequestCount((count) => count + 1);
-  }, []);
+  const retry = () => setRetryCount((count) => count + 1);
 
   return { state, retry };
 };

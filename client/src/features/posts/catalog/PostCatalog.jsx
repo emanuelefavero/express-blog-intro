@@ -9,6 +9,7 @@ export const PostCatalog = () => {
 
   const getContent = () => {
     switch (state.step) {
+      default:
       case 'idle':
         return null;
 
@@ -29,9 +30,6 @@ export const PostCatalog = () => {
             <Button onClick={retry}>Riprova</Button>
           </div>
         );
-
-      default:
-        return null;
     }
   };
 
